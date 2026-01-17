@@ -74,7 +74,7 @@
 			},
             {
                 "class_name": "UserAppSandboxService_v5",
-                "name": "Sandbox_v5"
+                "name": "Sandbox"
             },
             {
                 "class_name": "DORateLimitStore",
@@ -107,7 +107,10 @@
 		{
 			"tag": "v1",
 			"new_classes": [
-				"UserAppSandboxService_v5"
+				"CodeGeneratorAgent",
+				"UserAppSandboxService_v5",
+				"DORateLimitStore",
+				"UserSecretsStore"
 			]
 		}
 	],
@@ -118,7 +121,7 @@
         },
         {
             "pattern": "*.flipto.dev/*",
-            "custom_domain": false
+            "zone_name": "flipto.dev"
         }
     ],
 	"vars": {
