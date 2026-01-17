@@ -1247,14 +1247,14 @@ class CloudflareDeploymentManager {
 				return;
 			}
 
-			// Find the index of UserAppSandboxService_v4 container
+			// Find the index of UserAppSandboxService container (v3 or v4)
 			const sandboxContainerIndex = config.containers.findIndex(
-				(container) => container.class_name === 'UserAppSandboxService_v4',
+				(container) => container.class_name === 'UserAppSandboxService_v3' || container.class_name === 'UserAppSandboxService_v4',
 			);
 
 			if (sandboxContainerIndex === -1) {
 				console.warn(
-					'⚠️  UserAppSandboxService_v4 container not found in wrangler.jsonc',
+					'⚠️  UserAppSandboxService container not found in wrangler.jsonc',
 				);
 				return;
 			}
@@ -1314,12 +1314,12 @@ class CloudflareDeploymentManager {
 
 			// Find the indices of both containers
 			const userAppContainerIndex = config.containers.findIndex(
-				(container) => container.class_name === 'UserAppSandboxService_v4',
+				(container) => container.class_name === 'UserAppSandboxService_v3' || container.class_name === 'UserAppSandboxService_v4',
 			);
 
 			if (userAppContainerIndex === -1) {
 				console.warn(
-					'⚠️  UserAppSandboxService_v4 container not found in wrangler.jsonc',
+					'⚠️  UserAppSandboxService container not found in wrangler.jsonc',
 				);
 				return;
 			}

@@ -57,7 +57,7 @@
     ],
 	"containers": [
 		{
-			"class_name": "UserAppSandboxService_v4",
+			"class_name": "UserAppSandboxService_v3",
             "image": "./SandboxDockerfile",
             // "image": "registry.cloudflare.com/91bec12ca407f9be031f6ede9eaf34db/vibesdk-production-userappsandboxservice:cfe197fc",
             // Altering max_instances value will have no effect. Please use the MAX_SANDBOX_INSTANCES var instead.
@@ -87,7 +87,7 @@
 				"name": "CodeGenObject"
 			},
             {
-                "class_name": "UserAppSandboxService_v4",
+                "class_name": "UserAppSandboxService_v3",
                 "name": "Sandbox"
             },
             {
@@ -141,10 +141,13 @@
             "deleted_classes": [
                 "UserAppSandboxService_v3"
             ],
+            "tag": "v4"
+        },
+        {
             "new_sqlite_classes": [
                 "UserAppSandboxService_v4"
             ],
-            "tag": "v4"
+            "tag": "v5"
         }
 	],
 	"routes": [
