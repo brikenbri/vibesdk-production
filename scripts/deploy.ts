@@ -1247,14 +1247,14 @@ class CloudflareDeploymentManager {
 				return;
 			}
 
-			// Find the index of UserAppSandboxService container
+			// Find the index of UserAppSandboxService_v3 container
 			const sandboxContainerIndex = config.containers.findIndex(
-				(container) => container.class_name === 'UserAppSandboxService',
+				(container) => container.class_name === 'UserAppSandboxService_v3',
 			);
 
 			if (sandboxContainerIndex === -1) {
 				console.warn(
-					'⚠️  UserAppSandboxService container not found in wrangler.jsonc',
+					'⚠️  UserAppSandboxService_v3 container not found in wrangler.jsonc',
 				);
 				return;
 			}
@@ -1278,7 +1278,7 @@ class CloudflareDeploymentManager {
 			this.writeWranglerConfig(updatedContent);
 
 			this.logSuccess(
-				`Updated UserAppSandboxService max_instances: ${oldMaxInstances} → ${maxInstancesNum}`
+				`Updated UserAppSandboxService_v3 max_instances: ${oldMaxInstances} → ${maxInstancesNum}`
 			);
 		} catch (error) {
 			throw new DeploymentError(
@@ -1314,12 +1314,12 @@ class CloudflareDeploymentManager {
 
 			// Find the indices of both containers
 			const userAppContainerIndex = config.containers.findIndex(
-				(container) => container.class_name === 'UserAppSandboxService',
+				(container) => container.class_name === 'UserAppSandboxService_v3',
 			);
 
 			if (userAppContainerIndex === -1) {
 				console.warn(
-					'⚠️  UserAppSandboxService container not found in wrangler.jsonc',
+					'⚠️  UserAppSandboxService_v3 container not found in wrangler.jsonc',
 				);
 				return;
 			}
@@ -1341,7 +1341,7 @@ class CloudflareDeploymentManager {
 				console.log(`   Using instance type string: ${sandboxInstanceType}`);
 			}
 
-			// Update UserAppSandboxService instance_type
+			// Update UserAppSandboxService_v3 instance_type
 			let updatedContent = content;
 			const userAppInstanceTypeEdits = modify(
 				updatedContent,
@@ -1355,7 +1355,7 @@ class CloudflareDeploymentManager {
 			this.writeWranglerConfig(updatedContent);
 
 			this.logSuccess(`Updated container instance types for SANDBOX_INSTANCE_TYPE: ${sandboxInstanceType}`, [
-				`UserAppSandboxService: ${JSON.stringify(userAppInstanceType)}`,
+				`UserAppSandboxService_v3: ${JSON.stringify(userAppInstanceType)}`,
 			]);
 
 		} catch (error) {
