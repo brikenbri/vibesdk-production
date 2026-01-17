@@ -3,7 +3,7 @@
 declare namespace Cloudflare {
 	interface GlobalProps {
 		mainModule: typeof import("./worker/index");
-		durableNamespaces: "CodeGeneratorAgent" | "UserAppSandboxService_v4" | "DORateLimitStore";
+		durableNamespaces: "CodeGeneratorAgent" | "UserAppSandboxService_v3" | "UserAppSandboxService_v4" | "DORateLimitStore";
 	}
 	interface Env {
 		VibecoderStore: KVNamespace;
