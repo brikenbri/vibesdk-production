@@ -122,18 +122,6 @@
                 "UserSecretsStore"
             ],
             "tag": "v3"
-        },
-        {
-            "deleted_classes": [
-                "UserAppSandboxService_v3"
-            ],
-            "tag": "v4"
-        },
-        {
-            "new_sqlite_classes": [
-                "UserAppSandboxService_v4"
-            ],
-            "tag": "v5"
         }
 	],
 	"routes": [
