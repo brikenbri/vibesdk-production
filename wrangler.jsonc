@@ -73,8 +73,8 @@
 				"name": "CodeGenObject"
 			},
             {
-                "class_name": "UserAppSandboxService_v4",
-                "name": "Sandbox_v4"
+                "class_name": "UserAppSandboxService_v5",
+                "name": "Sandbox_v5"
             },
             {
                 "class_name": "DORateLimitStore",
@@ -107,7 +107,7 @@
 		{
 			"tag": "v1",
 			"new_classes": [
-				"UserAppSandboxService_v4"
+				"UserAppSandboxService_v5"
 			]
 		}
 	],
