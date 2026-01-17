@@ -48,7 +48,7 @@ import { isDev } from 'worker/utils/envs'
 import { FileTreeBuilder } from './fileTreeBuilder';
 import { DeploymentTarget } from 'worker/agents/core/types';
 // Export the Sandbox class in your Worker
-export { Sandbox as UserAppSandboxService_v3 } from "@cloudflare/sandbox";
+export { Sandbox as UserAppSandboxService_v4 } from "@cloudflare/sandbox";
 
 
 interface InstanceMetadata {
