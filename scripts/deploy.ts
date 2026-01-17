@@ -1834,10 +1834,37 @@ class CloudflareDeploymentManager {
 				return;
 			}
 
-			execSync('wrangler secret bulk .prod.vars', {
-				stdio: 'inherit',
-				cwd: PROJECT_ROOT,
-			});
+			// Read .prod.vars file and parse non-commented secrets
+			const prodVarsContent = readFileSync(prodVarsPath, 'utf-8');
+			const secretLines = prodVarsContent
+				.split('\n')
+				.filter(line => line.trim() && !line.trim().startsWith('#'))
+				.filter(line => line.includes('='));
+
+			if (secretLines.length === 0) {
+				console.log('ℹ️  No secrets found in .prod.vars to update');
+				return;
+			}
+
+			console.log(`📝 Updating ${secretLines.length} secret(s) individually to preserve existing secrets...`);
+
+			// Update each secret individually instead of bulk replace
+			for (const line of secretLines) {
+				const [key] = line.split('=');
+				const secretName = key.trim();
+
+				try {
+					// Use echo to pipe the value to wrangler secret put
+					execSync(`echo "${line.split('=')[1].replace(/"/g, '')}" | wrangler secret put ${secretName}`, {
+						stdio: 'pipe',
+						cwd: PROJECT_ROOT,
+						shell: '/bin/bash',
+					});
+					console.log(`   ✓ Updated secret: ${secretName}`);
+				} catch (err) {
+					console.warn(`   ⚠️  Could not update secret ${secretName}: ${err instanceof Error ? err.message : String(err)}`);
+				}
+			}
 
 			console.log('✅ Production secrets updated successfully');
 		} catch (error) {
