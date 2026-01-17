@@ -56,6 +56,16 @@
         }
     ],
 	"containers": [
+		{
+			"class_name": "UserAppSandboxService_v5",
+			"image": "./SandboxDockerfile",
+			"max_instances": 10,
+			"instance_type": {
+				"vcpu": 4,
+				"memory_mib": 8192,
+				"disk_mb": 10240
+			}
+		}
 	],
 	"d1_databases": [
 		{
