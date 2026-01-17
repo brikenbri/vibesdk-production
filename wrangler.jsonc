@@ -73,8 +73,8 @@
 				"name": "CodeGenObject"
 			},
             {
-                "class_name": "UserAppSandboxService_v3",
-                "name": "Sandbox"
+                "class_name": "UserAppSandboxService_v4",
+                "name": "Sandbox_v4"
             },
             {
                 "class_name": "DORateLimitStore",
@@ -105,11 +105,18 @@
     // },
 	"migrations": [
 		{
-			"new_sqlite_classes": [
-				"UserAppSandboxService"
-			],
-			"tag": "v1"
-        }
+			"tag": "v1",
+			"renamed_classes": [
+				{
+					"from": "UserAppSandboxService",
+					"to": "UserAppSandboxService_v3"
+				}
+			]
+		},
+		{
+			"tag": "v2",
+			"new_classes": ["UserAppSandboxService_v4"]
+		}
 	],
 	"routes": [
         {
