@@ -107,7 +107,6 @@
 		{
 			"tag": "v1",
 			"new_classes": [
-				"UserAppSandboxService_v3",
 				"UserAppSandboxService_v4"
 			]
 		}
