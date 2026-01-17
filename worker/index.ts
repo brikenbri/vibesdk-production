@@ -13,7 +13,7 @@ import { getAgentStub } from './agents';
 
 // Durable Object and Service exports
 // Temporarily export both v3 and v4 to allow migration to complete
-export { UserAppSandboxService_v3, UserAppSandboxService_v4 } from './services/sandbox/sandboxSdkClient';
+export { UserAppSandboxService_v5 } from './services/sandbox/sandboxSdkClient';
 export { CodeGeneratorAgent } from './agents/core/codingAgent';
 export { UserSecretsStore } from './services/secrets/UserSecretsStore';
 

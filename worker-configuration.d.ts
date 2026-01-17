@@ -3,7 +3,8 @@
 declare namespace Cloudflare {
 	interface GlobalProps {
 		mainModule: typeof import("./worker/index");
-		durableNamespaces: "CodeGeneratorAgent" | "UserAppSandboxService_v3" | "UserAppSandboxService_v4" | "DORateLimitStore";
+		durableNamespaces: "CodeGeneratorAgent" | "DORateLimitStore";
+		durableNamespaces: "CodeGeneratorAgent" | "DORateLimitStore" | "UserAppSandboxService_v5" | "UserSecretsStore";
 	}
 	interface Env {
 		VibecoderStore: KVNamespace;
@@ -50,8 +51,9 @@ declare namespace Cloudflare {
 		SENTRY_DSN: string;
 		USE_TUNNEL_FOR_PREVIEW: string;
 		USE_CLOUDFLARE_IMAGES: string;
-		CodeGenObject: DurableObjectNamespace<import("./worker/index").CodeGeneratorAgent>;
-		Sandbox: DurableObjectNamespace<import("./worker/index").UserAppSandboxService_v4>;
+		CodeGenObject: DurableObjectNamespace<import("./worker/index").CodeGeneratorAgent>;		
+		Sandbox: DurableObjectNamespace<import("./worker/index").UserAppSandboxService_v5>;
+		Sandbox_v5: DurableObjectNamespace<import("./worker/index").UserAppSandboxService_v5>;
 		DORateLimitStore: DurableObjectNamespace<import("./worker/index").DORateLimitStore>;
 		UserSecretsStore: DurableObjectNamespace<import("./worker/index").UserSecretsStore>;
 		TEMPLATES_BUCKET: R2Bucket;
