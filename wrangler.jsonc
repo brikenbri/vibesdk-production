@@ -109,12 +109,6 @@
 				"UserAppSandboxService"
 			],
 			"tag": "v1"
-		},
-        {
-            "new_sqlite_classes": [
-                "DORateLimitStore"
-            ],
-            "tag": "v2"
         },
         {
             "new_sqlite_classes": [
