@@ -138,6 +138,9 @@
             "tag": "v3"
         },
         {
+            "deleted_classes": [
+                "UserAppSandboxService"
+            ],
             "new_sqlite_classes": [
                 "UserAppSandboxService_v3"
             ],
